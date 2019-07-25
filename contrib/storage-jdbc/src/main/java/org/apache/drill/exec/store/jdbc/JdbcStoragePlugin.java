@@ -90,6 +90,8 @@ public class JdbcStoragePlugin extends AbstractStoragePlugin {
     source.setDriverClassName(config.getDriver());
     source.setUrl(config.getUrl());
 
+    source.addConnectionProperty("defaultRowPrefetch", "200");
+
     if (config.getUsername() != null) {
       source.setUsername(config.getUsername());
     }
